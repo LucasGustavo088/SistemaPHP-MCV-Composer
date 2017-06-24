@@ -13,6 +13,8 @@ $configs->env->development->database->setConnectionData(array(
   'dbname' => 'sistemahx'
 ));
 
+$configs->env->development->auth->setURLs('/sistema_hx/home/', '/sistema_hx/login/');
+
 /*
   //Globais
   $configs->title = 'Titulo customizado';
