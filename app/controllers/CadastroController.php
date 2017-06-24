@@ -12,7 +12,7 @@ class CadastroController extends \HXPHP\System\Controller
 			true
 		);
 
-		$this->auth->redirectCheck(false);
+		$this->auth->redirectCheck(true);
 	}
 
 	public function cadastrarAction()
@@ -34,6 +34,8 @@ class CadastroController extends \HXPHP\System\Controller
 					'Ops! Não foi possível efetuar o seu cadastro. Verifique os erros abaixo: ',
 					$cadastrarUsuario->errors
 				));
+			} else {
+				$this->auth->login($cadastrarUsuario->user->id, $cadastrarUsuario->user->username);
 			}
 		}
 	}
